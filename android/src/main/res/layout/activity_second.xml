@@ -59,11 +59,11 @@
                 android:orientation="vertical">
 
             <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     android:layout_gravity="right"
-                    android:padding="14dp"
-                    android:src="@mipmap/ic_photo" />
+                    android:padding="0dp"
+                    android:src="@mipmap/ic_back" />
         </LinearLayout>
     </LinearLayout>
 

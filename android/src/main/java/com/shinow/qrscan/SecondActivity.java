@@ -43,9 +43,9 @@ public class SecondActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_my_container, captureFragment).commit();
 
         lightLayout = findViewById(R.id.scan_light);
-        backLayout = findViewById(R.id.scan_back);
+        backLayout=findViewById(R.id.scan_back);
         photoLayout = findViewById(R.id.choose_photo);
-
+        photoLayout.setVisibility(View.INVISIBLE);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         sensorEventListener = new LightSensorEventListener(lightLayout);
@@ -86,15 +86,6 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SecondActivity.this.finish();
-            }
-        });
-        photoLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_PICK);
-                intent.setType("image/*");
-                SecondActivity.this.startActivityForResult(intent, REQUEST_IMAGE);
             }
         });
     }
